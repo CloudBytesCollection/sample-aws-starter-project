@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+- "12"
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install -g serverless
+
+jobs:
+  include:
+    - stage: "Tests"
+      name: "Unit Tests"
+      script: 
+        - npm install
+        - npm test
+    - stage: deploy
+      name: "Deploy to AWS"
+      script: sls deploy -v --stage dev
+      if: NOT type = pull_request
+      on:
+        branch: master

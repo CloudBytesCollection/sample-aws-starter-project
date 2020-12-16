@@ -1,0 +1,21 @@
+{
+  "name": "sample-aws-starter-project",
+  "version": "1.0.0",
+  "description": "Sample Serverless AWS App",
+  "main": "handler.js",
+  "scripts": {
+    "test": "test",
+    "start": "sls offline"
+  },
+  "keywords": [
+    "aws",
+    "serverless",
+    "nodejs",
+    "starter"
+  ],
+  "author": "EdyVision",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless-offline": "^6.8.0"
+  }
+}
