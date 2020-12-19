@@ -10,6 +10,11 @@ provider:
 functions:
   hello:
     handler: handler.hello
+    events:
+      - http:
+          path: sample/path/hello
+          method: get
+          cors: true
 
 plugins:
   - serverless-offline

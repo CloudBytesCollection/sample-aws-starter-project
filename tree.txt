@@ -1,0 +1,12 @@
+.
+├── README.MD
+├── handler.js
+├── libs
+│   └── utils
+│       └── promisesUtil.js
+├── package-lock.json
+├── package.json
+├── serverless.yml
+├── services
+│   └── sampleService.js
+└── test
