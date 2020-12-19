@@ -4,8 +4,8 @@
   "description": "Sample Serverless AWS App",
   "main": "handler.js",
   "scripts": {
-    "test": "test",
-    "start": "sls offline"
+    "start": "sls offline",
+    "test": "jest"
   },
   "keywords": [
     "aws",
@@ -17,5 +17,8 @@
   "license": "ISC",
   "devDependencies": {
     "serverless-offline": "^6.8.0"
+  },
+  "dependencies": {
+    "jest": "^26.6.3"
   }
 }
