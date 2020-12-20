@@ -9,7 +9,7 @@ const headers = {
     'Access-Control-Allow-Credentials': 'true'
 };
 
-module.exports.formatPromisePayload = async function(statusCode, payload) {
+module.exports.formatPromisePayload = (statusCode, payload) => {
     return {
         statusCode: statusCode,
         body: JSON.stringify(payload),
