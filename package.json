@@ -4,7 +4,7 @@
   "description": "Sample Serverless AWS App",
   "main": "handler.js",
   "scripts": {
-    "start": "sls offline",
+    "start": "sls offline --noAuth",
     "test": "jest --coverage",
     "precommit": "eslint .",
     "pretest": "eslint --ignore-path .gitignore .",
