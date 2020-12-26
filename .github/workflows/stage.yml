@@ -1,0 +1,37 @@
+#
+# Github Action Workflow for Serverless Framework
+#
+# On merge with main branch, tests will be executed and
+# the code will be deployed to staging where file tests
+# can be run prior to submitting for production.
+#
+
+name: Test and Deploy to Staging
+
+on:
+  pull_request:
+      branches: [ master ]
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - run: npm install -g serverless
+    - run: sls config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    - run: npm install
+    - run: npm test
+    - run: sls deploy -v -s stage
