@@ -34,4 +34,4 @@ jobs:
     - run: sls config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     - run: npm install
     - run: npm test
-    - run: sls deploy -v -s stage
+    - run: sls deploy -v -s staging
