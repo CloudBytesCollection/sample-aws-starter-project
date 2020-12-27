@@ -1,5 +1,5 @@
 # Sample AWS Starter Project
-![Build](https://github.com/EdyVision/sample-aws-starter-project/.github/workflows/stage.yml/badge.svg)
+![Build](https://github.com/EdyVision/sample-aws-starter-project/workflows/Test%20and%20Deploy%20to%20Staging/badge.svg)
 
 A simple starter project with sample tests, CI/CD configuration for GitHub Actions and Travis CI, and some security configurations to lock down endpoints.
 
